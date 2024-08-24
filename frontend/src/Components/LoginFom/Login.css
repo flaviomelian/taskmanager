@@ -1,0 +1,95 @@
+#login-component{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    left: 5%;
+    margin: auto;
+}
+
+.header-login{
+    position: relative;
+    left: 15%;
+    width: 75%;
+    font-weight: 500;
+    margin-bottom: 5%;
+}
+
+.fields{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.usr-img{
+    position: relative;
+    width: 12%;
+    margin-right: 3%;
+    right: 3%;
+    bottom: 10px;
+    border-radius: 50%;
+}
+
+.lck-img{
+    position: relative;
+    width: 12%;
+    right: 3%;
+    bottom: 20px;
+    border-radius: 50%;
+}
+
+input{
+    width: 60%;
+    font-size: 17px;
+}
+
+h2{
+    position: relative;
+    left: 15%;
+    top: 2vh;
+}
+
+.CIF-input{
+    position: relative;
+    bottom: 5vh;
+}
+
+.passwd{
+    position: relative;
+    bottom: 5vh;
+    left: 3%;
+}
+
+.button-login{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    left: 25%;
+    border-radius: 15% / 50%;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); 
+}
+
+.button-login:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 10); /* Efecto de brillo */
+}
+
+.to-sign-up{
+    position: relative;
+    bottom: 3vh;
+    left: 25%;
+    width: 50%;
+}
+
+.ankle-to-sign-up{
+    color: blue;
+    text-decoration: none;
+    margin-left: 5%;
+}
+
+.ankle-to-sign-up:hover{
+    color:blueviolet;
+    text-decoration: underline;
+}
