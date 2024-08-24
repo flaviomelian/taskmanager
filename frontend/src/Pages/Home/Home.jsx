@@ -30,7 +30,7 @@ const Home = () => {
         </section>
         <div className='group'>    
           <button className='start' onClick={() => navigate('/signup')}>Comenzar</button>
-          <a className='to-login' href="#" onClick={() => navigate('/login')}>Ya tengo cuenta</a>
+          <a className='to-login' onClick={() => navigate('/login')}>Ya tengo cuenta</a>
         </div>
       </div>
     </>

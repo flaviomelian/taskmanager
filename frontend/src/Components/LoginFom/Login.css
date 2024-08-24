@@ -84,13 +84,14 @@ h2{
     width: 50%;
 }
 
-.ankle-to-sign-up{
+.ankle-to-sign-up {
     color: blue;
     text-decoration: none;
     margin-left: 5%;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0); /* Estado inicial sin sombra */
+    transition: text-shadow 0.2s ease; /* Transición gradual para text-shadow */
 }
 
-.ankle-to-sign-up:hover{
-    color:blueviolet;
-    text-decoration: underline;
+.ankle-to-sign-up:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Efecto de sombra al hacer hover */
 }
