@@ -1,0 +1,55 @@
+#signup-form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 20vh;
+    padding: 3%;
+}
+
+.signup-header{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-data{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.lab-in{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.lab-in input{
+    width: 100%;
+}
+
+.caption{
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3%;
+}
+
+.button-signup{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    left: 35%;
+    margin-top: 3%;
+    border-radius: 10% / 50%;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); 
+}
+
+.button-signup:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 10); /* Efecto de brillo */
+}

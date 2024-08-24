@@ -1,3 +1,8 @@
 #layout{
-    width: 100vw;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url("../assets/3d-abstract-connections-background-flowing-dots-with-shallow-depth-field.jpg");
 }

@@ -7,8 +7,17 @@ const Dev = connection.define(
     name: {
       type: DataTypes.STRING,
     },
+    surnames: {
+      type: DataTypes.STRING,
+    },
+    devname: {
+      type: DataTypes.STRING,
+    },
     email: {
         type: DataTypes.STRING,
+    },
+    phone: {
+      type: DataTypes.STRING,
     },
     role: {
         type: DataTypes.ENUM({

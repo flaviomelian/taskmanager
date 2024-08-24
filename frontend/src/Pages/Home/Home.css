@@ -1,0 +1,85 @@
+#Home{
+    position: relative;
+    width: 40%;
+    bottom: 25vh;
+    left: 32%;
+}
+
+.hero{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+#header-Home{
+    opacity: 0;
+    font-size: 27px;
+    position: relative;
+    left: 7%;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.header-in-features{
+    opacity: 0;
+    background-image: linear-gradient(to right top black gray);
+    font-size: 25px;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1.8s;
+}
+
+.start{
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 3.5s;
+    position: relative;
+    width: 20%;
+    height: 4.5vh;
+    left: 35%;
+    margin-top: 5%;
+    border-radius: 20% / 50%;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); 
+}
+
+.start:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 10); /* Efecto de brillo */
+}
+
+.group{
+    display: flex;
+    flex-direction: column;
+}
+
+.to-login{
+    opacity: 0;
+    position: relative;
+    top: 2vh;
+    left: 38%;
+    animation: fadeInToLogin 1s ease-in forwards;
+    animation-delay: 4s;
+}
+
+.p-Home{
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 2.5s;
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInToLogin {
+    from{
+        top: 0vh;
+    }
+    
+    to {
+        opacity: 1;
+        top: 1vh
+    }
+}
