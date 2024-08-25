@@ -10,19 +10,17 @@ const Dev = connection.define(
     surnames: {
       type: DataTypes.STRING,
     },
-    devname: {
-      type: DataTypes.STRING,
-    },
     email: {
         type: DataTypes.STRING,
     },
     phone: {
       type: DataTypes.STRING,
     },
+    nick: {
+      type: DataTypes.STRING,
+    },
     role: {
-        type: DataTypes.ENUM({
-            values: ["front-end", "back-end", "dev-ops", "full-stack", "QA", "data-engineer", "master-scrum"]
-        })
+      type: DataTypes.STRING,
     },
   },
   {

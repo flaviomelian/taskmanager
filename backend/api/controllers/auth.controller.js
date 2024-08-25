@@ -8,10 +8,12 @@ const bcrypt = require("bcrypt");
 
 // Definimos la función signUp, que será una función asincrónica para manejar la creación de usuarios
 const signup = async (req, res) => {
+  console.log(req.body);
+  
   try {
     const existingDev = await Dev.findOne({
       where: {
-        CIF: req.body.CIF,
+        email: req.body.email,
       },
     });
 
@@ -24,11 +26,18 @@ const signup = async (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, salt);
 
     // Creamos un nuevo usuario con los datos proporcionados en la solicitud
-    const Dev = await Dev.create({
+    const newDev = await Dev.create({
       name: req.body.name,
+      surnames: req.body.surnames,
+      password: req.body.password,
       email: req.body.email,
-      role: req.body.role
+      role: req.body.rol,
+      nick: req.body.nick,
+      phone: req.body.phone,
     });
+
+    console.log(newDev);
+    
 
     // Creamos el payload del token, incluyendo el email del usuario
     const payload = { email: req.body.email };
@@ -39,7 +48,7 @@ const signup = async (req, res) => {
     return res.status(200).json({ token }); // === { token: token }
   } catch (error) {
     // Si hay un error, lo registramos y devolvemos un error 500 (Error interno del servidor)
-    console.log("Error signing up Dev");
+    console.log("Error signing up Dev", error);
     return res.status(500).json(error);
   }
 };

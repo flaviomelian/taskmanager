@@ -1,0 +1,32 @@
+.register-ok{
+    position: relative;
+    top: 0vh;
+}
+
+.register-ok-header{
+    width: 30%;
+    left: 1%;
+    position: relative;
+    bottom: 60vh;
+    margin: auto;
+}
+
+.register-ok-header-2{
+    width: 30%;
+    left: 5%;
+    position: relative;
+    top: -55vh;
+    margin: auto;
+}
+
+.goto-login{
+    position: relative;
+    bottom: 45vh;
+    left: 46%;
+    border-radius: 10% / 50%;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3); 
+}
+
+.goto-login:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 10); /* Efecto de brillo */
+}
