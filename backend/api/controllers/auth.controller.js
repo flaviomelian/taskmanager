@@ -97,7 +97,7 @@ const login = async (req, res) => {
 
 const getRole = async (req, res) => {
   let user
-  console.log ("email", req.body);
+  console.log ("email-auth.controller.js", req.body);
   
   try {
     user = await Dev.findOne({
