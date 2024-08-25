@@ -16,9 +16,10 @@ const Login = () => {
   const handleLogin= async () => {
     try {
       let data = { email: email, passwd: passwd }
-      const result = await login(data)
+      const result = await login(data);
+      console.log("data", data);
+      const role = await getRole(email);
       localStorage.setItem('token', result.token)
-      const {role} = await getRole(data);
       if (role === 'Client') navigate("/HomeClient");
       else navigate("/HomeDev");
     }catch(error) {

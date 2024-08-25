@@ -58,6 +58,7 @@ const signup = async (req, res) => {
 const login = async (req, res) => {
   try {
     // Intenta encontrar un usuario en la base de datos que coincida con el email proporcionado
+    console.log(req.body);
     const dev = await Dev.findOne({
       where: {
         email: req.body.email, // El email viene del cuerpo de la petición
@@ -65,9 +66,10 @@ const login = async (req, res) => {
     });
 
     // Si no se encuentra un usuario con el email proporcionado, devuelve un error 404
-    if (!dev) 
+    if (!dev){
+      console.log("No se encontro el dev");
       return res.status(401).send("email or password wrong"); // Mensaje de error indicando que el email o contraseña son incorrectos
-    
+    }
 
     // Utiliza bcrypt para comparar la contraseña proporcionada con la almacenada en la base de datos
     const checkPass = bcrypt.compareSync(req.body.passwd, dev.dataValues.password);
@@ -82,6 +84,7 @@ const login = async (req, res) => {
       // Devuelve el token generado con un estado 200, indicando éxito en el inicio de sesión
       return res.status(200).json({ token }); // El objeto json contiene el token generado
     } else {
+      console.log("esto es por otra cosa...");
       // Si la contraseña no es correcta, devuelve un error 404
       return res.status(401).send("email or password wrong"); // Mensaje de error similar al anterior
     }
