@@ -4,24 +4,26 @@ import userImage from '../../assets/user.png';
 import lockImage from '../../assets/lock.png';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react'
+import { login, getRole } from '../../Services/auth';
 
 const Login = () => {
 
-  const [CIF, setCIF] = useState()
-  const [password, setPassword] = useState()
+  const [email, setEmail] = useState()
+  const [passwd, setPasswd] = useState()
 
   const navigate = useNavigate()
 
   const handleLogin= async () => {
     try {
-      let data = { CIF: CIF, password: password }
+      let data = { email: email, passwd: passwd }
       const result = await login(data)
       localStorage.setItem('token', result.token)
-      const {role} = await getClientInformation();
-      (role==="client"? navigate("/HomeClient") : navigate("/HomeAdmin"))
-       
+      const {role} = await getRole(data);
+      if (role === 'Client') navigate("/HomeClient");
+      else navigate("/HomeDev");
     }catch(error) {
-      toast.error('Credenciales inválidas')
+      console.log("handle-login-error");
+      console.log(error);
     }
   }
 
@@ -33,9 +35,9 @@ const Login = () => {
         <div className='img-input'>
             <img className="usr-img" src={userImage}/>
             <input
-              className="CIF-input"
+              className="nick-input"
               onChange={(e) => {
-                setCIF(e.target.value)
+                setEmail(e.target.value)
               }}
               required
               placeholder="Introduzca su usuario"
@@ -45,7 +47,7 @@ const Login = () => {
         <div className='img-input'>
             <img className="lck-img" src={lockImage}/>
             <input className='passwd' type='password' onChange={(e) => {
-                setPassword(e.target.value)
+                setPasswd(e.target.value)
               }}
               required
               placeholder="Introduzca su contraseña"/> 

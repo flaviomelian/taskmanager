@@ -43,6 +43,7 @@ const checkAdmin = (req, res, next) => {
     return res.status(401).json("Only master allowed");
   next();
 };
+
 module.exports = {
   checkAuth,
   checkAdmin,
