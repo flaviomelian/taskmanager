@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { checkAdmin } = require("../middlewares/auth.js");
+const { checkAdmin, checkAuth } = require("../middlewares/auth.js");
 const {
   getAllDevs,
   getOneDev,
@@ -9,9 +9,9 @@ const {
 } = require("../controllers/Dev.controller.js");
 
 router.get("/", getAllDevs);
-router.get("/:id", getOneDev);
-router.post("/", createDev);
-router.put("/:id", updateDev);
-router.delete("/:id", deleteDev);
+router.get("/:id", checkAuth, getOneDev);
+router.post("/", checkAuth, createDev);
+router.put("/:id", checkAuth, updateDev);
+router.delete("/:id", checkAuth, deleteDev);
 
 module.exports = router;

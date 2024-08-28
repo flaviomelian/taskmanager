@@ -1,0 +1,18 @@
+.buttons{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 5vh;
+    justify-content: center;
+    width: 60%;
+    left: 27%;
+}
+
+.in-home-dev{
+    margin-top: 5%;
+}
+
+.home-button{
+    height: 110%;
+    padding-top: 1%;
+}

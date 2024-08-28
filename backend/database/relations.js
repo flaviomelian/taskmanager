@@ -7,9 +7,9 @@ const initializeRelations = () => {
   //RELACIONES
   try {
     DevTeam.hasMany(Dev);
-    Dev.belongsTo(DevTeam);
+    Dev.belongsToMany(DevTeam, {through: "Projects_DevTeams"});
     DevTeam.hasMany(Project);
-    Project.belongsToMany(DevTeam, {through: "Projects_DevTeams"});
+    Project.belongsTo(DevTeam);
     Project.belongsTo(Client);
     Client.hasMany(Project);
     Project.hasMany(Task);

@@ -46,6 +46,7 @@ const Signup = () => {
         }
       }
       const result = await signUp(data)
+      
       localStorage.setItem('token', result.token)
       navigate('/signedup', { state: { registered: true } }) //Con esta linea redirecciono a RegisterOK y mando el valor TRUE en una variable registered que podre usar en el RegisterOK
     } catch (error) {

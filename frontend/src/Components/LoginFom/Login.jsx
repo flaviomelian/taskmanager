@@ -4,7 +4,7 @@ import userImage from '../../assets/user.png';
 import lockImage from '../../assets/lock.png';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react'
-import { login, getRole } from '../../Services/auth';
+import { login } from '../../Services/auth';
 
 const Login = () => {
 
@@ -18,10 +18,10 @@ const Login = () => {
       let data = { email: email, passwd: passwd }
       const result = await login(data);
       console.log("data", data);
-      const role = await getRole(email);
       localStorage.setItem('token', result.token)
-      if (role === 'Client') navigate("/HomeClient");
-      else navigate("/HomeDev");
+      console.log(result.role)
+      if (result.role === 'Client') navigate("/HomeClient");
+      else navigate("/HomeDev/");
     }catch(error) {
       console.log("handle-login-error");
       console.log(error);

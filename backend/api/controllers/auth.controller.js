@@ -81,8 +81,10 @@ const login = async (req, res) => {
       const payload = { email: req.body.email };
       // Firma un token JWT usando una clave secreta y establece un tiempo de expiración
       const token = jwt.sign(payload, env.parsed.SECRET);
-      // Devuelve el token generado con un estado 200, indicando éxito en el inicio de sesión
-      return res.status(200).json({ token }); // El objeto json contiene el token generado
+      // Obtenemos el rol del usuario
+      const role = dev.role
+      // Devuelve el token generado con un estado 200, indicando éxito en el inicio de sesió
+      return res.status(200).json({ token, role }); // El objeto json contiene el token generado
     } else {
       console.log("esto es por otra cosa...");
       // Si la contraseña no es correcta, devuelve un error 404

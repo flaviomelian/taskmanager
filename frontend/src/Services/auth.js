@@ -11,7 +11,16 @@ export const login = async (dataLogin) => {
 }
 
 export const getRole = async (dataRole) => {
-  console.log(dataRole, "estoy en getRole");
-  const { data } = await api.get('/auth/role', dataRole)
+  const { data } = await api.get('/auth/role')
+  return data
+}
+
+export const getProfile = async (id) =>{
+  const token = localStorage.getItem("token")
+  console.log("ID-GETPROFILE AUTH.JS", id);
+  
+  const { data } = await api.get(`/Dev/${id}`, {
+    headers: { Authorization: token },
+  })
   return data
 }

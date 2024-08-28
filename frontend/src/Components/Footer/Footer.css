@@ -1,0 +1,13 @@
+.rrss{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    float: right;
+}
+
+.rrss-img{
+    width: 15%;
+    border-radius: 20%;
+    margin: 5%;
+}
