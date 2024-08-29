@@ -19,9 +19,8 @@ const Login = () => {
       const result = await login(data);
       console.log("data", data);
       localStorage.setItem('token', result.token)
-      console.log(result.role)
-      if (result.role === 'Client') navigate("/HomeClient");
-      else navigate("/HomeDev/");
+      if (result.dev.role === 'Client') navigate("/HomeClient");
+      else navigate("/HomeDev");
     }catch(error) {
       console.log("handle-login-error");
       console.log(error);

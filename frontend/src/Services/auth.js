@@ -1,4 +1,5 @@
 import api from './index'
+import {jwtDecode} from "jwt-decode";
 
 export const signUp = async (dataSignUp) => {
   const { data } = await api.post('/auth/signup', dataSignUp)
@@ -15,12 +16,20 @@ export const getRole = async (dataRole) => {
   return data
 }
 
-export const getProfile = async (id) =>{
-  const token = localStorage.getItem("token")
-  console.log("ID-GETPROFILE AUTH.JS", id);
-  
-  const { data } = await api.get(`/Dev/${id}`, {
-    headers: { Authorization: token },
-  })
-  return data
+export const getProfile = async () => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    console.error("No se encontró el token");
+    return null;
+  }
+
+  try {
+    const { data } = await api.get('/Dev/', {
+      headers: { Authorization: token }
+    });
+    return data;
+  } catch (error) {
+    console.error("Error al obtener el perfil:", error);
+    return null;
+  }
 }

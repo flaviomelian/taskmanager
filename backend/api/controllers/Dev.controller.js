@@ -12,7 +12,7 @@ const getAllDevs = async (request, response) => {
 
 const getOneDev = async (req, res) => {
   try {
-    const dev = await Dev.findByPk(req.params.id);
+    const dev = await Dev.findByPk(req.params.email);
     if (dev) {
       return res.status(200).json(dev);
     } else {
